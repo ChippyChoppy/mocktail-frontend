@@ -1,40 +1,153 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script defer src="./src/index.js"></script>
-    <link rel="stylesheet" href="./styles/main.css">
-    <title>Mocktail</title>
-</head>
-<body>
-<!-- starter html from Ian's lecture -->
-    <header>
-        <h2>Mocktail</h2>
-      </header>
-      <nav>
-        <ul>
-          <li>Recipe 1</li>
-          <li>Recipe 2</li>
-          <li>Recipe 3</li>
-        </ul>
-      </nav>
-      <main>
-        <img id="mocktail-img" src="https://user-images.githubusercontent.com/194400/49531010-48dad180-f8b1-11e8-8d89-1e61320e1d82.png" alt="placeholder" style="max-width: 500px;" />
-        <h1 id="mocktail-name">Recipe Title</h1>
-        <div class="info">
-          <h3 id="glassware">Glassware: </h3>
-         <h3>Ingredients</h3>
-        <ul id="recipe-components">
-        
-        </ul>
-        <button id="thumbs-up">👍</button><button id="thumbs-down">👎</button>
-        </div>
-        <hr />
-        
-         <p id="mocktail-directions">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora tempore ipsam a libero aliquam est, maxime officia et quisquam sint neque iusto reprehenderit aliquid dignissimos deserunt odit atque culpa nisi!</p>
-      </main>
 
-    
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script defer src="./src/index.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="./styles/main.css">
+  <title>Mocktail</title>
+</head>
+
+<body>
+  <!-- starter html from Ian's lecture -->
+  <div class="parent">
+
+    <div class="div1"> </div>
+
+    <div class="div2">
+      <img src="" alt="">
+    </div>
+
+    <div class="div3">
+      <div class="wrapper">
+
+        <nav class="flex-nav">
+          <ul>
+            <li><a href="#">My Favorites</a></li>
+            <li><a href="#">Browse Mocktails</a></li>
+            <li><a href="#">Filter Mocktails</a></li>
+            <li><a href="#">About Us</a></li>
+
+            <li class="social">
+              <a href="http://twitter.com/FlatironSchool"><i class="fa fa-twitter"></i></a>
+            </li>
+            <li class="social">
+              <a href="http://facebook.com/FlatironSchool"><i class="fa fa-facebook"></i></a>
+            </li>
+            <li class="social">
+              <a href="http://github.com/flatiron-school"><i class="fa fa-github"></i></a>
+            </li>
+            <li class="social">
+              <a href="http://instagram.com/flatironschool"><i class="fa fa-instagram"></i></a>
+            </li>
+          </ul>
+        </nav>
+
+      </div>
+    </div>
+
+    <div class="div4"> </div>
+
+    <div class="div5">
+      <header>
+        <h1>Welcome to Mocktail!</h1>
+        <h2>All of the party, with none of the hangover!</h2>
+      </header>
+    </div>
+    <div class="div6">
+      <div class="mocktail-container">
+        <div class="mocktail-tile">
+          <h2 id="mocktail-name">Recipe Title</h2>
+          <p id="mocktail-description"></p>
+          
+          <img id="mocktail-img"
+            src="https://user-images.githubusercontent.com/194400/49531010-48dad180-f8b1-11e8-8d89-1e61320e1d82.png"
+            alt="placeholder" style="max-width: 250px;" />
+          
+          <div class="info">
+            <h4 id="tasting-notes">Tasting Notes:</h4>
+            <h4 id="glassware">Glassware: </h4>
+            <h4>Ingredients</h3>
+            <ul id="recipe-components">
+              <li></li>
+              <li></li>
+              <li></li>
+            </ul>
+            
+            <p id="mocktail-directions">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora tempore ipsam a
+            libero aliquam est, maxime officia et quisquam sint neque iusto reprehenderit aliquid dignissimos deserunt
+            odit
+            atque culpa nisi!
+            </p>
+            <button id="thumbs-up">👍</button><button id="thumbs-down">👎</button>
+            <button id="fav-btn">✰ Add to your favs! ✰</button>
+          </div>
+        </div>
+
+        <div class="mocktail-tile">
+          <h2 id="mocktail-name">Recipe Title</h2>
+          <p id="mocktail-description"></p>
+          
+          <img id="mocktail-img"
+            src="https://user-images.githubusercontent.com/194400/49531010-48dad180-f8b1-11e8-8d89-1e61320e1d82.png"
+            alt="placeholder" style="max-width: 250px;" />
+          
+          <div class="info">
+            <h4 id="tasting-notes">Tasting Notes:</h4>
+            <h4 id="glassware">Glassware: </h4>
+            <h4>Ingredients</h3>
+            <ul id="recipe-components">
+              <li></li>
+              <li></li>
+              <li></li>
+            </ul>
+            
+            <p id="mocktail-directions">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora tempore ipsam a
+            libero aliquam est, maxime officia et quisquam sint neque iusto reprehenderit aliquid dignissimos deserunt
+            odit
+            atque culpa nisi!
+            </p>
+            <button id="thumbs-up">👍</button><button id="thumbs-down">👎</button>
+            <button id="fav-btn">✰ Add to your favs! ✰</button>
+          </div>
+        </div>
+
+        <div class="mocktail-tile">
+          <h2 id="mocktail-name">Recipe Title</h2>
+          <p id="mocktail-description"></p>
+          
+          <img id="mocktail-img"
+            src="https://user-images.githubusercontent.com/194400/49531010-48dad180-f8b1-11e8-8d89-1e61320e1d82.png"
+            alt="placeholder" style="max-width: 250px;" />
+          
+          <div class="info">
+            <h4 id="tasting-notes">Tasting Notes:</h4>
+            <h4 id="glassware">Glassware: </h4>
+            <h4>Ingredients</h3>
+            <ul id="recipe-components">
+              <li></li>
+              <li></li>
+              <li></li>
+            </ul>
+            
+            <p id="mocktail-directions">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora tempore ipsam a
+            libero aliquam est, maxime officia et quisquam sint neque iusto reprehenderit aliquid dignissimos deserunt
+            odit
+            atque culpa nisi!
+            </p>
+            <button id="thumbs-up">👍</button><button id="thumbs-down">👎</button>
+            <button id="fav-btn">✰ Add to your favs! ✰</button>
+          </div>
+        </div>
+
+        
+
+      </div>
+    </div>
+  </div>
+
 </body>
+
 </html>
