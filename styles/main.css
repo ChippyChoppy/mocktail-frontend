@@ -85,6 +85,7 @@ a:hover {
 .wrapper {
   margin: 0 auto;
   padding: 0px;
+  
 }
 
 /* Flex Container */
@@ -96,6 +97,7 @@ a:hover {
   padding: 0;
   display: flex;
   flex-direction: column;
+  height: 100vh;
 }
 
 /* Flex Items */
@@ -106,13 +108,13 @@ a:hover {
 .flex-nav .social {
   flex: 1;
   align-items: flex-end;
-  flex-direction: row;
+  flex-direction: column;
 }
 
 @media all and (max-width: 1000px) {
   
   .flex-nav ul {
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
     
   }
 
@@ -146,80 +148,28 @@ h2 {
   margin: 10px 50px 10px;
 
 }
-#fav-btn {
+.fav-btn {
   background-color: #f819ae;
   margin: 10px 10px 10px;
   border-radius: 2px;
   font-size: 20px;
 }
-#thumbs-up {
+.thumbs-up {
   background-color: #f819ae;
   margin: 10px 10px 10px;
   border-radius: 2px;
-  font-size: 25px;
+  font-size: 20px;
 }
-#thumbs-down {
+.thumbs-down {
   background-color: #f819ae;
   margin: 10px 10px 10px;
   border-radius: 2px;
-  font-size: 25px;
+  font-size: 20px;
 }
 
-#mocktail-name {
+.mocktail-name {
   margin: 0px ;
 }
-.banner img {
-  display: inline_block;
-  background-size: 100%;
-  width: 75%;
-}
-
-.center {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.nav {
- background-color:#f4cbc6;;
- height: 30px;
- width: 90%;
- margin: 0px auto;
- padding: 0px;
- border-radius: 25px;
- border: 2px solid #908783
-}
-
-.nav li {
-  /* border: 1px solid black; */
-  display: inline-block;
-  line-height: 30px;
-  padding: 0px 15px;
-  margin: 0px;
-}
-
-.nav li:hover {
-  background-color: #F1DDCF;
-  color: #DC047B;
-  transition: 2s;
-}
-
-.nav li a {
- text-decoration: none;
- color: #908783;
- font-weight: 800;
-}
-.nav li a:hover {
-text-decoration: none;
-color: #DC047B;
-font-weight: 800;
-}
-
-.right {
-float: right;
-}
-
-
 /* --------------CSS for background on every page --------------------- */
 
 .container {
@@ -238,6 +188,7 @@ justify-content: space-around;
 }
 
 .mocktail-tile {
+  display: inline;
   padding: 15px 15px;
   margin: 10px 0px;
   text-align: left;
@@ -253,8 +204,9 @@ justify-content: space-around;
 .mocktail-img {
   /* max-width is set in the html, figure this out later */
 object-fit: fill;
-max-width: 250px;
-border: 3px solid #DC047B;
+max-width: 275px;" 
+border: 3px solid #f819ae;
+justify-content: center;
 }
 
 .mocktail-directions {
