@@ -1,4 +1,4 @@
-/* starter css from Ian's lecture */
+
 /* Color pallette hex codes
 blue #0b4d78
 yellow #dddd22
@@ -7,12 +7,9 @@ neon green #31D843
 hot purple #b92cdd
 barely white #dfdfeb
 */
-/* @font-face {
-  font-family: 'lazerFont';
-  src: url(lazer84.ttf);
-} */
 
-/***************************** CSS GRID ELEMENTS ***************************/
+
+/********* CSS GRID ELEMENTS ********/
 .parent {
   display: grid;
   grid-template-columns: .3fr 1fr;
@@ -25,41 +22,33 @@ barely white #dfdfeb
     grid-area: 1 / 1 / 2 / 2; 
     background-image: linear-gradient(90deg, #0b4d78 90%, #b92cdd, #f819ae, #dddd22, #31d843, #36FFF8, #0b4d78 );
     display: flex;
+    justify-content: center;
+    position: sticky;
+    top: 0;
+    padding: 2px;
+    
   }
   .div2 { 
     grid-area: 1 / 2 / 2 / 3; 
-    
-  
   }
 
   * {
     box-sizing: border-box;
   }
 
-
 /***************************** CSS GENERAL PAGE ELEMENTS ***************************/ 
-/* html {
-  box-sizing: border-box;
-}
 
-*, *:before, *:after {
-  box-sizing: inherit;
-} */
 
 body {
   font-family: sans-serif;
   text-shadow: 2px 2px 0 #343434;
   margin: 0;
   background: #0b4d78;
-  /* background-image: linear-gradient(90deg, #0b4d78 75%, #b92cdd, #f819ae, #dddd22, #31d843, #36FFF8 );  */
   color: #dddd22;
   
 
 }
-@font-face {
-  font-family: 'lazer84';
-  src: ('./lazer84.rar');
-}
+
 /***************************** CSS nav bar & links ***************************/
 a {
   color: #dddd22;
@@ -132,7 +121,8 @@ form:hover{
     flex: 1 1 50%;
   }
   .flex-nav .social {
-    flex: 1 1 25%;
+    flex: 1 1 20%;
+    flex-wrap: wrap;
     
   }
 }
