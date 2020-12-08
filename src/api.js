@@ -27,9 +27,9 @@ function createUserFavoriteMocktail(favoriteMocktailObject) {
     .then(response => response.json())
 }
 
-function deleteMocktailFromFavoritesList () {
-  return fetch(`${baseUrl}/favorites/${id}`, {
+function deleteMocktailFromFavoritesList (id) {
+  return fetch(`${baseUrl}/favorites/${currentUser.id},${id}`, {
     method: 'DELETE',
   })
-    .then(response => response.json)
+    .then(response => response.json())
 }

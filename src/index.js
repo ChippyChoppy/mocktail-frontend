@@ -4,6 +4,7 @@ let currentMocktail
 let currentUser
 let currentUserId
 let allMocktails
+let theWholeDingDangFavoriteMocktailArray
 
 // DOM ELEMENTS
 const mocktailContainer = document.querySelector(".mocktail-container")
@@ -11,6 +12,7 @@ const signInForm = document.querySelector("#sign-in-form")
 const welcomeMessage = document.querySelector("#welcome")
 const div2 = document.querySelector(".div2")
 const favoriteMocktailLink = document.querySelector(".my-favorite-mocktails")
+// const browseAllMocktails = document.querySelector("browse-all-mocktails")
 
 /* Render Functions */
 const renderIngredient = (ingredient, parentElement) => {
@@ -33,7 +35,6 @@ const renderMocktail = (mocktail) => {
     mocktailImage.className = "mocktail-img"
     mocktailImage.src = mocktail.imageUrl
     mocktailImage.alt = mocktail.name
-    // mocktailImage.dataset.id = mocktail.id
 
     const mocktailNotes = document.createElement("h4")
     mocktailNotes.className = "mocktail-notes"
@@ -85,45 +86,43 @@ function renderMocktailArray(mocktailArray) {
 function renderOnlyMyFavoriteMocktails() {
 
     let allTheFavMocktailsOfTheCurrentUser = []
-    let favoriteMockailIds = []
+    // let favoriteMockailIds = []
     let allMocktailIds = []
     let mocktailsToBeRendered = []
     allMocktailIds = allMocktails.map(mocktail => mocktail.id)
 
 
     getFavoriteMocktails()
-        .then(favoriteMocktailArray => {
 
+        .then(favoriteMocktailArray => {
+            theWholeDingDangFavoriteMocktailArray = favoriteMocktailArray
             favoriteMocktailArray.forEach(favMocktail => {
 
                 if (favMocktail.user_id === currentUser.id) {
-
                     allTheFavMocktailsOfTheCurrentUser.push(favMocktail.mocktail_id)
-                    debugger
-                    let includedMocktails = allMocktailIds.filter(mocktail => allTheFavMocktailsOfTheCurrentUser.includes(mocktail))
-                    console.log(includedMocktails)
-
-                    for (i = 1; i < includedMocktails.length; i++) {
-                        mocktailsToBeRendered.push(allMocktails.find(mocktail => mocktail.id === includedMocktails[i]))
-
-                    }
-                    console.log(mocktailsToBeRendered)
-                    mocktailContainer.innerHTML = ""
-                    mocktailsToBeRendered.forEach(renderMyFavoriteMocktail)
                 }
+
             })
+            let includedMocktails = allMocktailIds.filter(mocktail => allTheFavMocktailsOfTheCurrentUser.includes(mocktail))
+            console.log(includedMocktails)
+            for (i = 0; i < includedMocktails.length; i++) {
+                mocktailsToBeRendered.push(allMocktails.find(mocktail => mocktail.id === includedMocktails[i]))
+            }
+            console.log(mocktailsToBeRendered)
+            mocktailContainer.innerHTML = ""
+            mocktailsToBeRendered.forEach(renderMyFavoriteMocktail)
         })
 }
 
-function getMocktailObjects() {
+// function getMocktailObjects() {
 
-}
+// }
 
 
 const renderMyFavoriteMocktail = (mocktail) => {
-
     const mocktailTile = document.createElement("div")
     mocktailTile.className = "mocktail-tile"
+    mocktailTile.dataset.id = mocktail.id
     mocktailTile.innerHTML = ""
 
     const mocktailName = document.createElement("h2")
@@ -134,7 +133,6 @@ const renderMyFavoriteMocktail = (mocktail) => {
     mocktailImage.className = "mocktail-img"
     mocktailImage.src = mocktail.imageUrl
     mocktailImage.alt = mocktail.name
-    // mocktailImage.dataset.id = mocktail.id
 
     const mocktailNotes = document.createElement("h4")
     mocktailNotes.className = "mocktail-notes"
@@ -174,7 +172,6 @@ const renderMyFavoriteMocktail = (mocktail) => {
 
     mocktailTile.append(mocktailName, mocktailImage, mocktailNotes, servingGlass, ingHeader, mocktailIngredients, mixingInstructions, likesBtn, dislikesBtn, deleteBtn)
 
-    
     mocktailContainer.append(mocktailTile)
 
 }
@@ -219,11 +216,20 @@ div2.addEventListener("click", function (event) {
     } else if (event.target.className === "fav-btn") {
         console.log("fav click")
         addMocktailToUserFavorites(event)
+    } else if (event.target.matches(".delete-btn")) {
+        console.log("clicked")
+        let id = event.target.dataset.id
+        deleteMocktailFromFavoritesList(id)
+            .then(data => {
+                console.log('success:', data)
+            })
     }
 })
 
 signInForm.addEventListener("submit", createOrSignInUserItsAllTheSameHere)
 favoriteMocktailLink.addEventListener("click", renderOnlyMyFavoriteMocktails)
+
+
 
 function createOrSignInUserItsAllTheSameHere(event) {
     event.preventDefault()
@@ -263,3 +269,4 @@ const showAllMocktails = () => {
 
 /* Initialize */
 showAllMocktails()
+// browseAllMocktails.addEventListener("click", showAllMocktails())

@@ -24,12 +24,17 @@ barely white #dfdfeb
   .div1 { 
     grid-area: 1 / 1 / 2 / 2; 
     background-image: linear-gradient(90deg, #0b4d78 90%, #b92cdd, #f819ae, #dddd22, #31d843, #36FFF8, #0b4d78 );
-    width: auto;
+    display: flex;
   }
-  .div2 { grid-area: 1 / 2 / 2 / 3; 
+  .div2 { 
+    grid-area: 1 / 2 / 2 / 3; 
+    
   
   }
 
+  * {
+    box-sizing: border-box;
+  }
 
 
 /***************************** CSS GENERAL PAGE ELEMENTS ***************************/ 
@@ -50,6 +55,10 @@ body {
   color: #dddd22;
   
 
+}
+@font-face {
+  font-family: 'lazer84';
+  src: ('./lazer84.rar');
 }
 /***************************** CSS nav bar & links ***************************/
 a {
