@@ -65,6 +65,8 @@ a {
 
 a:hover {
   background-image: linear-gradient(90deg, #0b4d78 15%, #b92cdd, #f819ae, #dddd22, #31d843, #36FFF8,  #0b4d78 );
+  color: black;
+  text-shadow: 1px 1px 0 #343434;
 }
 
 .wrapper {
